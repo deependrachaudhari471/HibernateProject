@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestige.dto">
+	<class name="CourseDTO" table="course_many_to_many">
+		<id name="courseId" column="C_ID"></id>
+		<property name="courseName" column="C_NAME" />
+		<property name="duration" column="C_DURATION" />
+
+		<set name="students" cascade="all" table="students_courses">
+			<key column="course_id" />
+			<many-to-many class="StudentDTO" column="student_id" />
+		</set>
+
+	</class>
+</hibernate-mapping>

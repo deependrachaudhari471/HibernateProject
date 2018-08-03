@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestige.dto">
+	<class name="BidDTO" table="BID_AUCTION">
+		<id name="bidId" column="BIDID"></id>
+		<property name="amount" column="AMOUNT" type="double"/>
+		<property name="teamName" column="TEAM_NAME"/>
+		<property name="itemId" column="ITEM_ID" />
+	</class>
+</hibernate-mapping>

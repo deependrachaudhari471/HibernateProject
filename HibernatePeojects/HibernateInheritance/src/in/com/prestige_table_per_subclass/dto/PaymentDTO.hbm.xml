@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="in.com.prestige_table_per_subclass.dto.PaymentDTO"
+		table="PAYMENT_PER_SUB_CLASS">
+		<id name="paymentId" column="PAYMENTID" />
+		<property name="amount" column="AMOUNT" />
+		
+		<joined-subclass name="in.com.prestige_table_per_subclass.dto.CreditCardDTO" table="CreditCard_per_sub_class">
+			<key column="dummy1" />
+			<property name="creditCardType" column="cctype" length="10" />
+		</joined-subclass>
+
+		<joined-subclass name="in.com.prestige_table_per_subclass.dto.ChequeDTO" table="Cheque_per_sub_class">
+			<key column="dummy2" />
+			<property name="chequeType" column="cqtype" length="10" />
+		</joined-subclass>
+	</class>
+</hibernate-mapping>

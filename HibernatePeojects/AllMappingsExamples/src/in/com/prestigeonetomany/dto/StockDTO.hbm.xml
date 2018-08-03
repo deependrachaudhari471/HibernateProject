@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestigeonetomany.dto">
+	<class name="StockDTO" table="stockTest">
+		<id name="stockId" column="ITEMID"></id>
+		<property name="stockName" column="DESCRIPTION" />
+		<set name="dailyRecords" cascade="all" lazy="false" >
+			<key column="STOCK_ID" />
+			<one-to-many class="StockDailyRecordsDTO" />
+		</set>
+
+	</class>
+</hibernate-mapping>
+

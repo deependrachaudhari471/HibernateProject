@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.presstige.dto">
+	<class name="StudentDTO" table="student_filter">
+		<id name="studentID" column="STUDENT_ID">
+			<generator class="increment" />
+		</id>
+		<property name="studentName" column="STUDENT_NAME" />
+		<property name="address" column="ADDRESS" />
+		<property name="age" column="age" />
+		<filter name="Student_Name" condition="STUDENT_NAME like '%m%'"></filter>
+		<filter name="age_varification" condition="age>=:age_param" />
+	</class>
+	<filter-def name="Student_Name"/>
+	<filter-def name="age_varification">
+		<filter-param name="age_param" type="int" />
+	</filter-def>
+</hibernate-mapping>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestige.dto">
+	<class name="StudentDTO" table="student_one_to_one">
+		<id name="studentId" column="S_ID"></id>
+		<property name="studentName" column="S_NAME" />
+		
+	</class>
+</hibernate-mapping>

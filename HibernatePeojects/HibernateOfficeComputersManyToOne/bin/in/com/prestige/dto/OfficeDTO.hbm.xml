@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestige.dto">
+	<class name="OfficeDTO" table="office_computer_many_to_one">
+		<id name="officeId" column="OFFICEID"></id>
+		<property name="officeName" column="Name" />
+		<property name="officeAddress" column="Address" />
+		
+	</class>
+</hibernate-mapping>

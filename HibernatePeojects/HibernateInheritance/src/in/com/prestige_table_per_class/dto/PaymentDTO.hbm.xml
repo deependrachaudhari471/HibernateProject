@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="in.com.prestige_table_per_class.dto.PaymentDTO" table="PAYMENT_PER_CLASS">
+		<id name="paymentId" column="PAYMENTID" />
+		<discriminator column="dcolumn" type="string" length="5" />
+		<property name="amount" column="AMOUNT" />
+		<subclass name="in.com.prestige_table_per_class.dto.CreditCardDTO" discriminator-value="CC">
+			<property name="creditCardType" column="cctype" length="10" />
+		</subclass>
+		<subclass name="in.com.prestige_table_per_class.dto.ChequeDTO" discriminator-value="cq">
+			<property name="chequeType" column="cqtype" length="10" />
+		</subclass>
+	</class>
+</hibernate-mapping>

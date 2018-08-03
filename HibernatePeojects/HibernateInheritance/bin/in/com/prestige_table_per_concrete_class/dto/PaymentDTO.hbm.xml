@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="in.com.prestige_table_per_concrete_class.dto.PaymentDTO"
+		table="PAYMENT_PER_CONCRETE_CLASS">
+		<id name="paymentId" column="PAYMENTID" />
+		<property name="amount" column="AMOUNT" />
+		<union-subclass name="in.com.prestige_table_per_concrete_class.dto.CreditCardDTO">
+			<property name="creditCardType" column="cctype" length="10" />
+		</union-subclass>
+
+		<union-subclass name="in.com.prestige_table_per_concrete_class.dto.ChequeDTO">
+			<property name="chequeType" column="cqtype" length="10" />
+		</union-subclass>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestige.dto">
+	<class name="PersonDTO" table="person_add_many_to_one">
+		<id name="personID" column="PERSONID"></id>
+		<property name="fName" column="FIRST_NAME" />
+		<property name="lName" column="LAST_NAME" />
+	</class>
+</hibernate-mapping>

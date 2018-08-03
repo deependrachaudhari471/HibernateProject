@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestige.dto">
+	<class name="PassengersDTO" table="passenger_bidirection">
+		<id name="passengerId" column="PaseengerId"></id>
+		<property name="pName" column="Passenger_NAME" />
+		
+		<many-to-one name="passenger" column="TrainID" class="TrainDTO"
+			cascade="all" />
+
+	</class>
+</hibernate-mapping>

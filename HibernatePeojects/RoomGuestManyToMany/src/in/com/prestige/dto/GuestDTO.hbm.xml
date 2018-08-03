@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestige.dto">
+	<class name="GuestDTO" table="guest_many_to_many">
+		<id name="guestId" column="GUESTID"></id>
+		<property name="fName" column="FIRSTNAME" />
+		<property name="lName" column="LASTNAME" />
+		<property name="phone" column="PHONE" />
+		<property name="address" column="ADDRESS" />
+		<property name="date" column="DATE" type="date" />
+		<property name="time" column="TIME" type="timestamp" />
+
+		<set name="rooms" cascade="all" table="bookings">
+			<key column="guest_id" />
+			<many-to-many class="RoomDTO" column="room_id" />
+		</set>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestigeonetomany.dto">
+	<class name="StockDailyRecordsDTO" table="stockdailytest">
+		<id name="stockdailyId" column="STOCKDAILYID"></id>
+		<property name="priceOpen" column="PRICEOPEN" type="double"/>
+		<property name="priceClose" column="PRICECLOSE"/>
+		<property name="date" column="DATE" />
+		<property name="stock_id" column="STOCK_ID" />
+	</class>
+</hibernate-mapping>

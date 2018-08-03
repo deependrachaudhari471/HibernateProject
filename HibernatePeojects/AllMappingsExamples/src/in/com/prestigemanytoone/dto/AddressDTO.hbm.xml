@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestigemanytoone.dto">
+	<class name="AddressDTO" table="addresstest">
+		<id name="addressId" column="AddressId"></id>
+		<property name="city" column="CITY" />
+		<property name="state" column="STATE" />
+	</class>
+</hibernate-mapping>

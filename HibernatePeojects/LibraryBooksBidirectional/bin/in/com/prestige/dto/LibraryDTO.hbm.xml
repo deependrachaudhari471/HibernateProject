@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestige.dto">
+	<class name="LibraryDTO" table="library_bidirection">
+		<id name="libraryCode" column="LIB_CODE"></id>
+		<property name="libraryName" column="LIB_NAME" />
+
+		<set name="booksID" cascade="all" >
+			<key column="LIB_ID" />
+			<one-to-many class="BooksDTO" />
+		</set>
+
+	</class>
+</hibernate-mapping>

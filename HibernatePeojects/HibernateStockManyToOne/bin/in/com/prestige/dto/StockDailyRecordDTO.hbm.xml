@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestige.dto">
+	<class name="StockDailyRecordDTO" table="stockdailyrecord_many_to_one">
+		<id name="dailyRecordID" column="STOCKID"></id>
+		<property name="priceOpen" column="PRICE_OPEN" type="double"/>
+		<property name="priceClose" column="PRICE_CLOSE" type="double"/>
+		<property name="priceChange" column="PRICE_CHANGE" type="double"/>
+		<property name="date" column="DATE" type="date" />
+		<property name="time" column="TIMESTAMP" type="timestamp"/>
+		<many-to-one name="stockID" column="STOCK_ID" class="StockDTO"
+			cascade="all" />
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestigeonetomanybidirectional">
+	<class name="TrainDTO" table="traintest">
+		<id name="TainNo" column="TRAINNO"></id>
+		<property name="TrainName" column="TRAIN_NAME" />
+		
+		<set name="passengers" cascade="all" >
+			<key column="TrainID" />
+			<one-to-many class="PassengerDTO" />
+		</set>
+
+	</class>
+</hibernate-mapping>

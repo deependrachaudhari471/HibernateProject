@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestige.dto">
+	<class name="DepartmentDTO" table="department_employee">
+		<id name="departmentId" column="DepartmentId"></id>
+		<property name="deptName" column="DEPARTMENT_NAME" />
+		<set name="children" cascade="all">
+			<key column="DEPART_ID" />
+			<one-to-many class="EmployeeDTO" />
+		</set>
+
+	</class>
+</hibernate-mapping>

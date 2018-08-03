@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestige.dto">
+	<class name="OrderDTO" table="order_customer">
+		<id name="OrderId" column="ORDERID"></id>
+		<property name="productName" column="PRODUCT_NAME" />
+		<property name="amount" column="AMOUNT"/>
+		<property name="orderDate" column="ORDER_DATE" type="date"/>
+		<property name="customerId" column="CUSTOMER_Id"/>
+
+	</class>
+</hibernate-mapping>

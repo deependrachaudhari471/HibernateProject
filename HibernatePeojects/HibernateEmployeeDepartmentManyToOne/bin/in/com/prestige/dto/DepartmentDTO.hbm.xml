@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestige.dto">
+	<class name="DepartmentDTO" table="depart_employee_many_to_one">
+		<id name="departID" column="DEPARTID"></id>
+		<property name="departName" column="DEPART_NAME" />
+	</class>
+</hibernate-mapping>

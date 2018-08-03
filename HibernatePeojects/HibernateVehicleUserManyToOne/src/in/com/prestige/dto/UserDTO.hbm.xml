@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestige.dto">
+	<class name="UserDTO" table="user_vehicle_many_to_one">
+		<id name="userId" column="USERID"></id>
+		<property name="userName" column="USER_NAME" />
+		<property name="userAddress" column="USER_ADDRESS" />
+		<property name="phone" column="PHONE" />
+		
+	</class>
+</hibernate-mapping>

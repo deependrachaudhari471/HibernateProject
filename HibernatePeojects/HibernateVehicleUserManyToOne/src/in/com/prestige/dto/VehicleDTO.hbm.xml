@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestige.dto">
+	<class name="VehicleDTO" table="vehicle_user_many_to_one">
+		<id name="vehicleId" column="VEHICLEID"></id>
+		<property name="vehicleName" column="VEHICLE_NAME" />
+		<many-to-one name="userid" column="USER_ID" class="UserDTO"
+			cascade="all" />
+
+	</class>
+</hibernate-mapping>

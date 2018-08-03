@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestige.dto">
+	<class name="AddressDTO" table="address_one_to_one">
+		<id name="addressId" column="ADDRESS_ID">
+			<generator class="foreign">
+				<param name="property">std</param>
+			</generator>
+		</id>
+		<property name="city" column="CITY" />
+		<property name="state" column="STATE" />
+		<one-to-one name="std" class="StudentDTO" cascade="all" />
+	</class>
+</hibernate-mapping>

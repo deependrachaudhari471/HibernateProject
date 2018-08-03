@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestige.dto">
+	<class name="RoomDTO" table="room_many_to_many">
+		<id name="roomNumber" column="ROOM_NO"></id>
+		<property name="pricePerDay" column="PRICE" type="double"/>
+		<property name="floor" column="FLOOR" />
+		<property name="maxPerson" column="MAX_PERSON" />
+
+		<set name="guests" cascade="all" table="bookings">
+			<key column="room_id" />
+			<many-to-many class="GuestDTO" column="guest_id" />
+		</set>
+
+	</class>
+</hibernate-mapping>

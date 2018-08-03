@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="in.com.prestige.dto">
+	<class name="UniversityDTO" table="university_student">
+		<id name="uID" column="UID"></id>
+		<property name="uName" column="U_NAME" />
+		<property name="country" column="COUNTRY" />
+		<set name="studentID" cascade="all">
+			<key column="UID" />
+			<one-to-many class="StudentDTO" />
+		</set>
+
+	</class>
+</hibernate-mapping>
